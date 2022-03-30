@@ -3,17 +3,21 @@ import { createTheme } from "@mui/material/styles";
 export const theme = createTheme({
     palette: {
         primary: {
-            main: '#f2f7f5',
+            main: '#f8f5f2',
         },
         secondary: {
-            main: '#00473e',
+            main: '#232323',
         },
         text: {
-            primary: '#00473e',
+            primary: '#222525',
+            secondary: '#f2f7f5',
         },
         button: {
             background: '#faae2b',
             text: '#00473e',
+        },
+        typography: {
+            fontFamily: 'Roboto',
         }
     }
 })
