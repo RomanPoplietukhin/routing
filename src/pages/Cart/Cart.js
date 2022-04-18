@@ -1,19 +1,22 @@
-// import { OrderFirstStep } from "../../components/OrderFirstStep"
+import { OrderFirstStep } from "../../components/OrderFirstStep"
 import {useDispatch, useSelector} from "react-redux";
-import {createCard} from "../../utils/cardGenerate";
+// import {createCard} from "../../utils/cardGenerate";
+import { CreateCard } from "../../components/CreateCard";
 import {Button, Card, CardActions, Grid, Box} from '@mui/material'
 import {increment, decrement, initialState, removeFromCart, reset} from "../../ducks/cart";
-// import { ModalWindow } from "../../components/ModalWindow";
-
-// import {useState} from "react";
+import {useMemo, useState} from "react";
 
 export function Cart() {
+    const [ orderIsOpen, setOrderIsOpen ] = useState(false)
+
     const { data } = useSelector(state => state.catalog)
     const cart = useSelector(state => state.cart)
     const dispatch = useDispatch()
-
-    const cartList = []
-
+    // const cartList =  useMemo(() => {
+    //     return [];
+    // }, [])
+    const cartList = [];
+    console.log('---------------------Cart render', cartList)
     data.forEach(el => {
         for(let item of cart.items) {
             if(el.id === item.id) {
@@ -24,13 +27,12 @@ export function Cart() {
             }
         }
     })
-    // console.log(cartList)
     return(
         <Grid container spacing={1}>
             { cartList.map(el => (
                 <Grid md={ 3 } key={ el.id } item >
                     <Card >
-                        { createCard(el) }
+                        <CreateCard {...el} />
                         <CardActions>
                             <h2>{el.amount}</h2>
                             <Button
@@ -61,11 +63,13 @@ export function Cart() {
                           </CardActions>
                       </Box>
                     </Card>
-
                 </Grid>
             )) }
-            {/*<OrderFirstStep/>*/}
+            { orderIsOpen &&  <OrderFirstStep  orderIsOpen={ orderIsOpen } setOrderIsOpen={ setOrderIsOpen }/>  }
             <div>
+                <button onClick={() => setOrderIsOpen(!orderIsOpen)}>
+                    order
+                </button>
                 <button onClick={() => dispatch(reset({
                     items: initialState.items
                 }))}>

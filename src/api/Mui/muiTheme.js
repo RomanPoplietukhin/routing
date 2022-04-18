@@ -2,24 +2,59 @@ import { createTheme } from "@mui/material/styles";
 
 export const theme = createTheme({
     palette: {
-        primary: {
-            main: '#f8f5f2',
+        mode: "light",
+        common: {
+            black: '#000',
+            white: '#fff',
         },
-        secondary: {
-            main: '#232323',
+
+        background: {
+            main: '#004643',
+            secondary: '#abd1c6',
+            buttonBg: '#f9bc60',
         },
         text: {
-            primary: '#222525',
-            secondary: '#f2f7f5',
+            main: '#fffffe',
+            secondary: '#001e1d',
+            plainText: '#abd1c6',
         },
-        button: {
-            background: '#faae2b',
-            text: '#00473e',
+        card: {
+            main: '#abd1c6',
         },
-        typography: {
-            fontFamily: 'Roboto',
-        }
-    }
+
+
+            headline: '#fffffe',
+            paragraph: '#abd1c6',
+            button: '#f9bc60',
+            buttonText: '#001e1d',
+
+        // secondary: {
+        //     main: '#232323',
+        // },
+        // text: {
+        //     primary: '#222525',
+        //     secondary: '#f2f7f5',
+        // },
+        // button: {
+        //     background: '#faae2b',
+        //     text: '#00473e',
+        // },
+        // typography: {
+        //     fontFamily: 'Roboto',
+        // }
+    },
+    typography: {
+        fontFamily: 'Roboto',
+        // fontSize: 16,
+    },
+    spacing: 4
+    // zIndex: {
+    //     modal: 0,
+    //     mobileStepper: 0,
+    //     snackbar: 0,
+    //     tooltip: 0,
+    //     drawer: 0,
+    //     speedDial: 0
+    // }
 })
 
-console.log(theme);

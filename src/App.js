@@ -10,21 +10,25 @@ import { Header } from './components/Header';
 import { Container, Box } from '@mui/material'
 import { ThemeProvider } from '@mui/material/styles'
 import {  theme } from './api/Mui/muiTheme'
+import {palette} from "@mui/system";
 
 export function App() {
   // const [ darkMode, setDarkMode ] = useState(false);
 
   return (
     <ThemeProvider theme={ theme }>
-      <Box 
+      <Box
         sx={{
-          backgroundColor: 'primary.main',
-          color: 'text.primary',
+          backgroundColor: 'background.main',
+          // textAlign: 'center',
+          color: 'text.main',
+          minHeight: '100vh',
+          padding: '5vh',
         }}>
         <>
           <Header/>
         </>
-        <Container >
+        <Container>
           <Routes>
             <Route path='/' element={ <HomePage/> }/>
             <Route path='/catalog' element={ <Catalog/> }/>

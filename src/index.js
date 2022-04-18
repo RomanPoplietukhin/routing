@@ -4,7 +4,7 @@ import { AppWrapper } from './AppWrapper';
 
 ReactDOM.render(
   <React.StrictMode>
-    <AppWrapper />
+    <AppWrapper  />
   </React.StrictMode>,
   document.getElementById('root')
 );

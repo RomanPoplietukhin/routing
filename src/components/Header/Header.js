@@ -1,57 +1,65 @@
-// import { AppBar, Toolbar, Typography, IconButton } from "@mui/material";
-// import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
-// import MenuIcon from '@mui/icons-material/Menu';
-// import { useState } from "react";
+import {Box, List, ListItem, ListItemButton, Typography} from '@mui/material'
+import ShoppingBasketIcon from '@mui/icons-material/ShoppingBasket';
 import { NavLink } from "react-router-dom";
-// import './Header.scss'
 
 export function Header() {
     return (
-        <div>
-            <div className='header-logo'> 
-                AWERShop 
-            </div>
-            <nav className='header-navigation'>
-                <ul className='header-navigation__list'>
-                    <li className='list-item'>
-                        <NavLink to='/'> home  </NavLink>
-                    </li>
-                    <li className='list-item'>
-                        <NavLink to='/catalog'> catalog </NavLink>
-                    </li>
-                    <li className='list-item'>
-                        <NavLink to='/about'> about </NavLink>
-                    </li>
-                    <li className='list-item'>
-                        <NavLink to='/delivery'> delivery </NavLink>
-                    </li>
-                    <li className='list-item'>
-                        <NavLink to='/cart'> cart </NavLink>
-                    </li>
-                </ul>
+        <Box sx={{
+            display: 'flex',
+            justifyContent: 'space-between'
+        }}>
+            <Typography variant='h3'>
+                <NavLink
+                    style={{textDecoration: 'none', color: 'inherit'}}
+                    to='/'>
+                        AWERShop
+                </NavLink>
+            </Typography>
+            <nav>
+                <List sx={{
+                    display: 'flex',
+                    listStyle: 'none',
+                    fontSize: 'large',
+                }}>
+                    <ListItem>
+                        <NavLink
+                            style={{textDecoration: 'none', color: 'inherit', textTransform:'uppercase', }}
+                            to='/'>
+                            <ListItemButton> home </ListItemButton>
+                        </NavLink>
+                    </ListItem>
+                    <ListItem>
+                        <NavLink
+                            style={{textDecoration: 'none', color: 'inherit', textTransform:'uppercase'}}
+                            to='/catalog'>
+                            <ListItemButton> catalog </ListItemButton>
+                        </NavLink>
+                    </ListItem>
+                    <ListItem>
+                        <NavLink
+                            style={{textDecoration:'none', color:'inherit', textTransform:'uppercase'}}
+                            to='/about'>
+                            <ListItemButton> about </ListItemButton>
+                        </NavLink>
+                    </ListItem>
+                    <ListItem>
+                        <NavLink
+                            style={{textDecoration:'none', color:'inherit', textTransform:'uppercase'}}
+                            to='/delivery'>
+                            <ListItemButton> delivery </ListItemButton>
+                        </NavLink>
+                    </ListItem>
+                    <ListItem>
+                        <NavLink
+                            style={{textDecoration: 'none', color: 'inherit'}}
+                            to='/cart'>
+                            <ListItemButton>
+                                <ShoppingBasketIcon/>
+                            </ListItemButton>
+                        </NavLink>
+                    </ListItem>
+                </List>
             </nav>
-        </div>
+        </Box>
     )
 }
-            // <div className='header-logo'> 
-            //     AWERShop 
-            // </div>
-            // <nav className='header-navigation'>
-            //     <ul className='header-navigation__list'>
-            //         <li className='list-item'>
-            //             <NavLink to='/'> home  </NavLink>
-            //         </li>
-            //         <li className='list-item'>
-            //             <NavLink to='/catalog'> catalog </NavLink>
-            //         </li>
-            //         <li className='list-item'>
-            //             <NavLink to='/about'> about </NavLink>
-            //         </li>
-            //         <li className='list-item'>
-            //             <NavLink to='/delivery'> delivery </NavLink>
-            //         </li>
-            //         <li className='list-item'>
-            //             <NavLink to='/cart'> cart </NavLink>
-            //         </li>
-            //     </ul>
-            // </nav>

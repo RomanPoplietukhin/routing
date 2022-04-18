@@ -1,17 +1,15 @@
 import { Box } from '@mui/system'
+import {Typography} from "@mui/material";
 
 export function HomePage() {
     return(
-        <Box className="home-page__container" sx={{
-            fontFamily: "'Roboto', sans-serif",
-            
-        }}>
-            <h1 className="home-page__title">
-                Welcome to <span>awersome</span> shop!!
-            </h1>
-            <p className="home-page__text">
+        <Box sx={{mt: '30vh', textAlign: 'center'}}>
+            <Typography variant='h2'>
+                Welcome to awersome shop!!
+            </Typography>
+            <Typography variant='p'>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis, autem.
-            </p>
+            </Typography>
         </Box>
     )
 }

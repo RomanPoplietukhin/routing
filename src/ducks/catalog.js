@@ -29,7 +29,6 @@ export async function loadProductsList(dispatch) {
      dispatch(startProductsLoading())
     try {
         const productList = await loadProducts()
-        console.log(productList)
         const { data } = productList
         dispatch(endProductsLoading({
             data,
